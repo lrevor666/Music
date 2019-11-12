@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon" />
+	<title>音乐</title>
+	<link rel="stylesheet" href="./css/reset.css" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/recommend.css" />
+	<link rel="stylesheet" href="./css/recommendSong.css" />
+	<link rel="stylesheet" href="./css/songWord.css" />
+</head>
+
+<body>
+
+	<audio name="00000" id="audio" src=""></audio>
+
+	<div class="bigbox">
+
+		<!-- 头部 -->
+		<header>
+
+			<div class="phone"></div>
+
+			<div class="top-nav clearfix">
+				<div class="fl top-nav-left"></div>
+				<div class="fl top-nav-center">
+					<span class="span-active" id="mySong">我的</span>
+					<span>听歌</span>
+					<span>发现</span>
+					<span>推荐</span>
+				</div>
+				<div class="fr top-nav-right"></div>
+			</div>
+
+			<div class="search-box clearfix">
+				<input class="fl" type="text" placeholder="搜索:歌曲,歌手,专辑,用户">
+				<div class="fl search"></div>
+			</div>
+
+		</header>
+
+
+		<div class="main-box">
+
+			<div class="main-content1" name="song1">
+
+				<!-- 热门推荐歌单 -->
+				<div class="recommend">
+					<div class="recommend-banner">
+						<img class="auto-img" src="./images/banner1.png">
+					</div>
+					<div class="recommend-main">
+						<div class="hot-recommend">
+							<i class="song-line"></i>
+							<span>热门推荐</span>
+						</div>
+					</div>
+					<div class="recommend-info clearfix">
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="main-content2" name="song0">
+
+				<div class="recommend-song">
+
+					<div class="recommend-song-title clearfix">
+						<span class="song-title-line"></span>
+						<span class="fl song-all">全部歌单 > </span>
+						<span id="name" class="fl recommend-song-name">全部歌单</span>
+					</div>
+
+					<div class="recommend-song-list">
+
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+
+	<!-- 底部 -->
+	<div class="controls-box">
+
+		<div class="fl controls-box-icon" id="" name=""></div>
+
+		<div class="fl controls-box-right">
+
+			<div class="play-time clearfix">
+				<span class="fl s-time">00:00</span>
+				<span class="fr e-time">00:00</span>
+			</div>
+
+			<div class="progress">
+				<div class="active-progress"></div>
+				<div class="mask"></div>
+				<div class="layer"></div>
+			</div>
+
+			<div class="song-name clearfix">
+				<div class="fl">
+					<p class="one-text one-text-top">我的音乐</p>
+					<p class="one-text one-text-bottom text-p">我的音乐</p>
+				</div>
+				<div class="fr play-icon">
+					<span class="fl span1" name="1"></span>
+					<span class="fl span2" id="playpause" name="2"></span>
+					<span class="fl span3"></span>
+					<span class="fl span4"></span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<!-- 歌词界面 -->
+	<div class="song-word">
+
+		<div class="song-word-system"></div>
+
+		<div class="song-word-top">
+			<span class="song-word-return"></span>
+			<span class="song-word-share"></span>
+			<div class="song-word-box">
+				<p id="song-word-song">歌曲</p>
+				<p id="song-word-singer">歌手</p>
+			</div>
+		</div>
+		<div class="song-word-center">
+			<div class="song-word-img" name="0">
+			</div>
+			<div class="song-word-main">
+
+			</div>
+		</div>
+		<div class="song-word-bottom">
+			<div class="song-word-prev"></div>
+			<div class="song-word-icon"></div>
+			<div class="song-word-play"></div>
+			<div class="song-word-next"></div>
+		</div>
+	</div>
+
+
+	<script src="js/jquery-3.4.1.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/recommend.js"></script>
+	<script src="js/recommendSong.js"></script>
+	<script src="js/songWord.js"></script>
+	<script>
+		$('.span1').on('click', function () {
+
+			var playHeart = this.getAttribute('name');
+			console.log('playHeart ==> ', playHeart);
+
+			if (playHeart == 1) {
+
+				this.setAttribute('name', 0);
+
+				$(this).css({
+					background: 'url(./icons/heart.png)',
+					backrepeat: 'no-repeat',
+					backgroundSize: '.22rem .22rem'
+				})
+
+			} else {
+
+				this.setAttribute('name', 1);
+
+				$(this).css({
+					background: 'url(./icons/hearto.png)',
+					backrepeat: 'no-repeat',
+					backgroundSize: '.22rem .22rem'
+				})
+			}
+		})
+	</script>
+</body>
+
+</html>
